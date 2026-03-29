@@ -14,7 +14,9 @@ public class PlayerController : MonoBehaviour
  private float movementY;
 
  // Speed at which the player moves.
- public float speed = 0; 
+ public float speed = 5; 
+
+ [SerializeField] private Camera cam;
 
  // Start is called before the first frame update.
  void Start()
@@ -36,11 +38,31 @@ public class PlayerController : MonoBehaviour
 
  // FixedUpdate is called once per fixed frame-rate frame.
  private void FixedUpdate() 
-    {
- // Create a 3D movement vector using the X and Y inputs.
-        Vector3 movement = new Vector3 (movementX, 0f, movementY);
+{
+    Vector3 movement = new Vector3(movementX, 0f, movementY);
 
- // Apply force to the Rigidbody to move the player.
-        rb.AddForce(movement * speed); 
+    rb.linearVelocity = movement * speed;
+
+    RotateToMouse();
+}
+
+void RotateToMouse()
+{
+    Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue());
+    RaycastHit hit;
+
+    // Shoot a ray onto the ground
+    if (Physics.Raycast(ray, out hit))
+    {
+        Vector3 target = hit.point;
+        target.y = transform.position.y;
+
+        Vector3 direction = (target - transform.position).normalized;
+
+        if (direction != Vector3.zero)
+        {
+            transform.forward = direction;
+        }
     }
+}
 }

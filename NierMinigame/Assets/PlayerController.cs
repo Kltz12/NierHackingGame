@@ -61,7 +61,7 @@ void RotateToMouse()
 
         if (direction != Vector3.zero)
         {
-            transform.forward = direction;
+            transform.forward = -direction;
         }
     }
 }

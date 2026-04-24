@@ -8,5 +8,10 @@ public class BulletLogic : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (other.gameObject.tag == "Shield")
+        {
+            Destroy(gameObject);
+        }
     }
 }

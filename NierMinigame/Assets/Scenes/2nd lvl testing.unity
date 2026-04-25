@@ -138,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d02e425270c98f6439316f1fef5d12ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d02e425270c98f6439316f1fef5d12ca, type: 3}
       propertyPath: m_LocalScale.z
@@ -150,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d02e425270c98f6439316f1fef5d12ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d02e425270c98f6439316f1fef5d12ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -393,6 +393,8 @@ MonoBehaviour:
   PlayerAtHealth2P2: {fileID: 1258231095}
   PlayerAtHealth1P1: {fileID: 240912200}
   PlayerAtHealth1P2: {fileID: 38348105}
+  IsInvincible: 0
+  InvincibleTime: 3
 --- !u!1 &71267133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1877,7 +1879,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35cacc272a86e8c48846acda97209107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 55308221}
+  enemy: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!114 &918098238
 MonoBehaviour:
   m_ObjectHideFlags: 0

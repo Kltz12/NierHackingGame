@@ -4,6 +4,8 @@ public class PlayerHealth : MonoBehaviour
 {
     public float health = 3;
 
+    public float damage = 1;
+
     public GameObject PlayerAtHealth2P1;
     public GameObject PlayerAtHealth2P2;
     public GameObject PlayerAtHealth1P1;
@@ -59,15 +61,24 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("EnemyBullet") && other.gameObject.CompareTag("Lava") && !IsInvincible)
+        if (other.gameObject.CompareTag("EnemyBullet") && !IsInvincible || other.gameObject.CompareTag("Lava") && !IsInvincible)
         {
-            health -= 1;
-            Destroy(other.gameObject);
-
             IsInvincible = true;
             invincibleTimer = InvincibleTime;
+            health -= damage;
+            if(other.gameObject.CompareTag("EnemyBullet"))
+            {
+                 Destroy(other.gameObject);
+            }
+            Debug.Log("Player got hit");
+        }
+        else if (other.gameObject.CompareTag("EnemyBullet") && IsInvincible)
+        {
+            Destroy(other.gameObject);
         }
     }
+
+    
 
     private void BeInvincible()
     {

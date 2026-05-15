@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8787522397952555178}
   - component: {fileID: 3528165091548803719}
   - component: {fileID: 5426170474969220583}
-  - component: {fileID: 5172779849929540265}
+  - component: {fileID: 3298877086472312165}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -66,6 +66,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2299431493402848668}
+  - {fileID: 6661928756610808510}
   - {fileID: 7069369694669897754}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -161,9 +162,10 @@ MonoBehaviour:
   firePoint: {fileID: 7069369694669897754}
   directionTargets:
   - {fileID: 2299431493402848668}
+  - {fileID: 6661928756610808510}
   bulletSpeed: 10
   fireRate: 1
---- !u!114 &5172779849929540265
+--- !u!114 &3298877086472312165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +174,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5056452605038752958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a782c702339c446bfd038b4f7a07b8, type: 3}
+  m_Script: {fileID: 11500000, guid: a7294b1a602be1c49b7e20d034bf6cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
@@ -202,6 +204,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1891563389827416557}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8027231892575073327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6661928756610808510}
+  m_Layer: 0
+  m_Name: ShootDirection (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6661928756610808510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027231892575073327}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

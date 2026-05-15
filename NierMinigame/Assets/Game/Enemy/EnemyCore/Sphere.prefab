@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5659981571407994323}
   - component: {fileID: 1582467012219794458}
   - component: {fileID: 2943359183742320664}
-  - component: {fileID: 7233116953696799673}
   - component: {fileID: 2058074745241606938}
+  - component: {fileID: 7617411758777244515}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: EnemyCore
@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca21c3ab5b79b004d9fb5de8da6fc9da, type: 2}
+  - {fileID: 2100000, guid: d431473a502ccbb46ab4656e371ee5f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,19 +112,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7233116953696799673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2296704941671609679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a782c702339c446bfd038b4f7a07b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5
 --- !u!114 &2058074745241606938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +129,19 @@ MonoBehaviour:
   shield2: {fileID: 6203666223041293708}
   radius: 0.75
   speed: 90
+--- !u!114 &7617411758777244515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2296704941671609679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676fcd6a96cd0ef4aa495d4bb918f23c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 7
 --- !u!1001 &380467586402172789
 PrefabInstance:
   m_ObjectHideFlags: 0

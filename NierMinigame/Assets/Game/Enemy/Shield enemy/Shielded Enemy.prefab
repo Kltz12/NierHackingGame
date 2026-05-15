@@ -224,10 +224,10 @@ PrefabInstance:
       addedObject: {fileID: 3251454110174645904}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b29fed261548711448cb6f3fa20232c1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 605307438149222524}
+      addedObject: {fileID: 6480141262482624938}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b29fed261548711448cb6f3fa20232c1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6480141262482624938}
+      addedObject: {fileID: 8696151826161359657}
   m_SourcePrefab: {fileID: 100100000, guid: b29fed261548711448cb6f3fa20232c1, type: 3}
 --- !u!4 &6033224418675268262 stripped
 Transform:
@@ -323,19 +323,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &605307438149222524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6409045616888528924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a782c702339c446bfd038b4f7a07b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5
 --- !u!114 &6480141262482624938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,3 +341,16 @@ MonoBehaviour:
   bulletSpeed: 10
   fireCooldown: 2
   shootThreshold: 0.5
+--- !u!114 &8696151826161359657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409045616888528924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7294b1a602be1c49b7e20d034bf6cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5

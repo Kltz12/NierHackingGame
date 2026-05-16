@@ -21,24 +21,29 @@ public class WinManager : MonoBehaviour
     }
 
     public void DestroyAllEnemies()
+{
+    // DEFAULT ENEMIES
+    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+    foreach (GameObject enemy in enemies)
     {
-        string[] tags =
-        {
-            "Enemy",
-            "EnemyBullet",
-            "EnemyCore"
-        };
+        DefaultEnemyHealth health = enemy.GetComponent<DefaultEnemyHealth>();
 
-        foreach (string tag in tags)
+        if (health != null)
         {
-            GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
-
-            foreach (GameObject obj in objects)
-            {
-                Destroy(obj);
-            }
+            health.EnemyDead();
         }
     }
+
+
+    // ENEMY BULLETS
+    GameObject[] bullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
+
+    foreach (GameObject bullet in bullets)
+    {
+        Destroy(bullet);
+    }
+}
 
     public void LockPlayerMovement()
     {

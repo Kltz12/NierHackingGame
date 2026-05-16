@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
  [SerializeField] private Camera cam;
 
+ public bool isLocked = false;
+
  // Start is called before the first frame update.
  void Start()
     {
@@ -37,8 +39,14 @@ public class PlayerController : MonoBehaviour
     }
 
  // FixedUpdate is called once per fixed frame-rate frame.
- private void FixedUpdate() 
+private void FixedUpdate() 
 {
+    if (isLocked)
+    {
+        rb.linearVelocity = Vector3.zero;
+        return;
+    }
+
     Vector3 movement = new Vector3(movementX, 0f, movementY);
 
     rb.linearVelocity = movement * speed;

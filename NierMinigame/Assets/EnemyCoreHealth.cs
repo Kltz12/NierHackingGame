@@ -4,11 +4,13 @@ public class EnemyCoreHealth : MonoBehaviour
 {
     public float health = 7;
 
+    [SerializeField] private WinManager winManager;
+
     void Update()
     {
         if (health <= 0)
         {
-            Destroy(gameObject);
+            EnemyDead();
         }
     }
 
@@ -19,5 +21,12 @@ public class EnemyCoreHealth : MonoBehaviour
             health -= 1;
             Destroy(other.gameObject);
         }
+    }
+
+    public void EnemyDead()
+    {
+        winManager.GameWon();
+        Destroy(gameObject);
+
     }
 }

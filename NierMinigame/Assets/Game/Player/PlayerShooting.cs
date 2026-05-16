@@ -10,9 +10,11 @@ public class PlayerShooting : MonoBehaviour
     public float fireRate = 0.1f; // time between shots
     private float nextFireTime = 0f;
 
+    public bool isLocked = false;
+
     void Update()
     {
-        if (Mouse.current.leftButton.isPressed && Time.time >= nextFireTime)
+        if (Mouse.current.leftButton.isPressed && Time.time >= nextFireTime && !isLocked)
         {
             Shoot();
             nextFireTime = Time.time + fireRate;

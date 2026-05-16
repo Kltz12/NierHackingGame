@@ -8,7 +8,7 @@ public class DefaultEnemyHealth : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(gameObject);
+            EnemyDead();
         }
     }
 
@@ -19,5 +19,10 @@ public class DefaultEnemyHealth : MonoBehaviour
             health -= 1;
             Destroy(other.gameObject);
         }
+    }
+
+    public void EnemyDead()
+    {
+        Destroy(gameObject);
     }
 }

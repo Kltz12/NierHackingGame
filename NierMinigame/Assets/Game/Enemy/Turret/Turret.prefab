@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 3298877086472312165}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,6 +66,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2299431493402848668}
+  - {fileID: 6993478250798940930}
   - {fileID: 6661928756610808510}
   - {fileID: 7069369694669897754}
   m_Father: {fileID: 0}
@@ -158,11 +159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf85ae8808ae1c498f1b4492a2983df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 2293696955488123682, guid: 319c80dfbffd91244b87249718433271, type: 3}
+  bulletPrefab: {fileID: 2786902642982871855, guid: a37e6d6f217290242b5487c6815aa3d3, type: 3}
   firePoint: {fileID: 7069369694669897754}
   directionTargets:
   - {fileID: 2299431493402848668}
-  - {fileID: 6661928756610808510}
+  - {fileID: 6993478250798940930}
   bulletSpeed: 10
   fireRate: 1
 --- !u!114 &3298877086472312165
@@ -203,7 +204,38 @@ Transform:
   m_GameObject: {fileID: 6212955583823368946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: -2}
+  m_LocalPosition: {x: 2, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1891563389827416557}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7738295936353203995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6993478250798940930}
+  m_Layer: 0
+  m_Name: ShootDirection (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6993478250798940930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7738295936353203995}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

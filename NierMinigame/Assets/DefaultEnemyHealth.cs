@@ -22,7 +22,7 @@ public class DefaultEnemyHealth : MonoBehaviour
     }
 
     public void EnemyDead()
-    {
-        Destroy(gameObject);
-    }
+{
+    Destroy(transform.root.gameObject);
+}
 }

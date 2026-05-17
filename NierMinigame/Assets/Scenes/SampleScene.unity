@@ -612,7 +612,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 1
-  m_Center: {x: 0.00000032782555, y: 0, z: 0.00000035762787}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &339422186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,7 +884,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1159,7 +1159,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1173898543
 GameObject:
@@ -1286,6 +1286,7 @@ GameObject:
   - component: {fileID: 1398965922}
   - component: {fileID: 1398965921}
   - component: {fileID: 1398965920}
+  - component: {fileID: 1398965925}
   - component: {fileID: 1398965924}
   m_Layer: 0
   m_Name: Lava
@@ -1293,7 +1294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1398965920
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1410,6 +1411,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &1398965925
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398965919}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1425424463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1461,6 +1483,10 @@ PrefabInstance:
     - target: {fileID: 5056452605038752958, guid: 9199ed6803d9b934e9d082d155d44cf4, type: 3}
       propertyPath: m_Name
       value: Turret (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056452605038752958, guid: 9199ed6803d9b934e9d082d155d44cf4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1645,7 +1671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056452605038752958, guid: 9199ed6803d9b934e9d082d155d44cf4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1712,6 +1738,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6480141262482624938, guid: b5fc01855464e7a4a8fdff2bfe4d6370, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1357400500}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

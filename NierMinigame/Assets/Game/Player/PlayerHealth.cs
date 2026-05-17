@@ -59,24 +59,29 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+   private void OnTriggerEnter(Collider other)
+{
+    if (IsInvincible)
     {
-        if (other.gameObject.CompareTag("EnemyBullet") && !IsInvincible || other.gameObject.CompareTag("Lava") && !IsInvincible)
-        {
-            IsInvincible = true;
-            invincibleTimer = InvincibleTime;
-            health -= damage;
-            if(other.gameObject.CompareTag("EnemyBullet"))
-            {
-                 Destroy(other.gameObject);
-            }
-            Debug.Log("Player got hit");
-        }
-        else if (other.gameObject.CompareTag("EnemyBullet") && IsInvincible)
-        {
+        if (other.CompareTag("EnemyBullet"))
             Destroy(other.gameObject);
-        }
+
+        return;
     }
+
+    if (other.CompareTag("EnemyBullet") || other.CompareTag("Lava"))
+    {
+        IsInvincible = true;
+        invincibleTimer = InvincibleTime;
+
+        health -= damage;
+
+        if (other.CompareTag("EnemyBullet"))
+            Destroy(other.gameObject);
+
+        Debug.Log("Player got hit");
+    }
+}
 
     
 

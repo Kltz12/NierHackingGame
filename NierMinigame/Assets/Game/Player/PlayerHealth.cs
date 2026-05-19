@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
     private float invincibleTimer;
 
-    [SerializeField] private WinManager winManager;
+    [SerializeField] private WinLoseManager WinloseManager;
 
     void Start()
     {
@@ -99,7 +99,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void PlayerDead()
     {
-        winManager.GameLost();
+        WinloseManager.GameLost();
         Destroy(gameObject);
     }
 }

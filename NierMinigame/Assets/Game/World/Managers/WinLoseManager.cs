@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WinManager : MonoBehaviour
+public class WinLoseManager : MonoBehaviour
 {
     [SerializeField] private GameObject WinCanvas;
      [SerializeField] private GameObject LoseCanvas;

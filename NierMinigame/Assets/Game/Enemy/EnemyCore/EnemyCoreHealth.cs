@@ -4,7 +4,7 @@ public class EnemyCoreHealth : MonoBehaviour
 {
     public float health = 7;
 
-    [SerializeField] private WinManager winManager;
+    [SerializeField] private WinLoseManager WinloseManager;
 
     void Update()
     {
@@ -25,7 +25,7 @@ public class EnemyCoreHealth : MonoBehaviour
 
     public void EnemyDead()
     {
-        winManager.GameWon();
+        WinloseManager.GameWon();
         Destroy(gameObject);
 
     }

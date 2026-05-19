@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class WinManager : MonoBehaviour
 {
-    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject WinCanvas;
+     [SerializeField] private GameObject LoseCanvas;
 
     [SerializeField] private PlayerController playerController;
     [SerializeField] private PlayerShooting playerShooting;
 
     void Start()
     {
-        canvas.SetActive(false);
+        WinCanvas.SetActive(false);
+        LoseCanvas.SetActive(false);
     }
 
     public void GameWon()
@@ -17,8 +19,17 @@ public class WinManager : MonoBehaviour
         DestroyAllEnemies();
         LockPlayerMovement();
 
-        Invoke(nameof(ShowCanvas), 1f);
+        Invoke(nameof(ShowWinCanvas), 1f);
     }
+
+    public void GameLost()
+    {
+        DestroyAllEnemies();
+        LockPlayerMovement();
+
+        Invoke(nameof(ShowLoseCanvas), 1f);
+    }
+
 
     public void DestroyAllEnemies()
 {
@@ -51,8 +62,13 @@ public class WinManager : MonoBehaviour
         playerShooting.isLocked = true;
     }
 
-    void ShowCanvas()
+    void ShowWinCanvas()
     {
-    canvas.SetActive(true);
+    WinCanvas.SetActive(true);
+    }
+
+    void ShowLoseCanvas()
+    {
+    LoseCanvas.SetActive(true);
     }
 }

@@ -16,6 +16,8 @@ public class PlayerHealth : MonoBehaviour
 
     private float invincibleTimer;
 
+    [SerializeField] private WinManager winManager;
+
     void Start()
     {
         PlayerAtHealth2P1.SetActive(true);
@@ -49,7 +51,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            PlayerDead();
         }
 
         // Invincibility timer
@@ -93,5 +95,11 @@ public class PlayerHealth : MonoBehaviour
         {
             IsInvincible = false;
         }
+    }
+
+    public void PlayerDead()
+    {
+        winManager.GameLost();
+        Destroy(gameObject);
     }
 }

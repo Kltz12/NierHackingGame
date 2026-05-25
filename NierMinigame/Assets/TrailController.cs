@@ -9,18 +9,27 @@ public class TrailController : MonoBehaviour
     public float emissionRate = 30f;
 
     private ParticleSystem.EmissionModule emission;
+    private ParticleSystem.ShapeModule shape;
 
     void Start()
     {
         emission = trailParticles.emission;
+        shape = trailParticles.shape;
+
         emission.rateOverTime = 0f;
     }
 
     void Update()
     {
-        if (playerRb.linearVelocity.magnitude > moveThreshold)
+        Vector3 velocity = playerRb.linearVelocity;
+
+        if (velocity.magnitude > moveThreshold)
         {
             emission.rateOverTime = emissionRate;
+
+            // Rotate only emission direction
+            Vector3 dir = -velocity.normalized;
+            shape.rotation = Quaternion.LookRotation(dir).eulerAngles;
         }
         else
         {

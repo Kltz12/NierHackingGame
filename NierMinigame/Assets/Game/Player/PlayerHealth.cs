@@ -18,6 +18,8 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private WinLoseManager WinloseManager;
 
+    [SerializeField] private PlayerHitVFX hitVFX;
+
     void Start()
     {
         PlayerAtHealth2P1.SetActive(true);
@@ -77,6 +79,7 @@ public class PlayerHealth : MonoBehaviour
         invincibleTimer = InvincibleTime;
 
         health -= damage;
+        hitVFX.PlayHitEffect();
 
         if (other.CompareTag("EnemyBullet"))
             Destroy(other.gameObject);

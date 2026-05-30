@@ -128,6 +128,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b142a9646f6554899063d141e03213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactVFXPrefab: {fileID: 80407900525402554, guid: 4eff4fdfb44933047b5ca744f6e00317, type: 3}
+  minX: -12.5
+  maxX: 12.5
+  minZ: -12.5
+  maxZ: 12.5
 --- !u!65 &6954238007463334710
 BoxCollider:
   m_ObjectHideFlags: 0

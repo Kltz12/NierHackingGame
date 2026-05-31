@@ -133,6 +133,7 @@ MonoBehaviour:
   maxX: 12.5
   minZ: -12.5
   maxZ: 12.5
+  vfxHeight: 0.01
 --- !u!65 &6954238007463334710
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -19,11 +19,10 @@ public class BulletLogic : MonoBehaviour
         {
             Vector3 hitPoint = transform.position;
 
-            // XZ clamp (fixes out-of-bounds issue)
             hitPoint.x = Mathf.Clamp(hitPoint.x, minX, maxX);
             hitPoint.z = Mathf.Clamp(hitPoint.z, minZ, maxZ);
 
-            // Y lock (fixes floating height issue)
+        
             hitPoint.y = vfxHeight;
 
             Instantiate(impactVFXPrefab, hitPoint, Quaternion.identity);

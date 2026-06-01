@@ -33,27 +33,27 @@ public class BulletImpactVFX : MonoBehaviour
 
     IEnumerator Play()
     {
-        // STEP 1: square
+        // STEP 1
         impactQuad.SetActive(true);
 
-        // STEP 2: structured pixel field
+        // STEP 1
         SpawnPixels();
 
-        // STEP 3: square disappears
+        // STEP 2
         yield return new WaitForSeconds(squareTime);
         impactQuad.SetActive(false);
 
-        // STEP 4: pixel scrambling
+        // STEP 3/4
         yield return StartCoroutine(ShufflePixels(2, 1f));
 
-        // STEP 5: pixels → ring
+        // STEP 5
         yield return StartCoroutine(RemovePixels());
         impactRing.SetActive(true);
 
         yield return new WaitForSeconds(pixelLifeTime);
         impactRing.SetActive(false);
 
-        // STEP 6: ring → lines
+        // STEP 6
         impactLines.SetActive(true);
 
         yield return new WaitForSeconds(lineDuration);
@@ -65,11 +65,11 @@ public class BulletImpactVFX : MonoBehaviour
     {
         for (int i = 0; i < pixelCount; i++)
         {
-            // Square field position
+            
             float x = Random.Range(-spawnHalfSize, spawnHalfSize);
             float z = Random.Range(-spawnHalfSize, spawnHalfSize);
 
-            // Slight center bias (important for NieR-like feel)
+            // give it a slight middle focused bias
             float bias = Random.Range(0.6f, 1f);
 
             Vector3 spawnPos = transform.position + new Vector3(

@@ -4,6 +4,10 @@ public class DefaultEnemyHealth : MonoBehaviour
 {
     public float health = 5;
 
+    [Header("Hit VFX")]
+    public GameObject hitVFXPrefab;
+    public float vfxHeightOffset = 0.02f;
+
     void Update()
     {
         if (health <= 0)
@@ -14,15 +18,29 @@ public class DefaultEnemyHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PlayerBullet"))
+        if (other.CompareTag("PlayerBullet"))
         {
+            SpawnHitVFX(other.transform.position);
+
             health -= 1;
+
             Destroy(other.gameObject);
         }
     }
 
+    void SpawnHitVFX(Vector3 hitPosition)
+    {
+        hitPosition.y += vfxHeightOffset;
+
+        Instantiate(
+            hitVFXPrefab,
+            hitPosition,
+            Quaternion.identity
+        );
+    }
+
     public void EnemyDead()
-{
-    Destroy(transform.root.gameObject);
-}
+    {
+        Destroy(transform.root.gameObject);
+    }
 }

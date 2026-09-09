@@ -41,6 +41,7 @@ public class DefaultEnemyHealth : MonoBehaviour
 
     public void EnemyDead()
     {
+        
         Destroy(transform.root.gameObject);
     }
 }

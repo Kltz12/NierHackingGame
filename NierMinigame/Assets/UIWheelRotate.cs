@@ -11,6 +11,9 @@ public class UIWheelRotate : MonoBehaviour
     [SerializeField] private float startingSpeed = 5f;
     [SerializeField] private float accelerationDuration = 0.5f;
 
+    [Header("Shutdown")]
+    [SerializeField] private float decelerationDuration = 0.5f;
+
     private RectTransform rectTransform;
     private float currentSpeed;
     private bool isRotating = false;
@@ -44,10 +47,10 @@ public class UIWheelRotate : MonoBehaviour
 
     public void StopRotating()
     {
-        isRotating = false;
-        currentSpeed = 0f;
+        if (!isRotating)
+            return;
 
-        RotatingLeft = !RotatingLeft;
+        StartCoroutine(SlowDownCogs());
     }
 
     private IEnumerator StartUpCogs()
@@ -74,5 +77,34 @@ public class UIWheelRotate : MonoBehaviour
         }
 
         currentSpeed = rotationSpeed;
+    }
+
+    private IEnumerator SlowDownCogs()
+    {
+        float startingSpeed = currentSpeed;
+        float elapsed = 0f;
+
+        while (elapsed < decelerationDuration)
+        {
+            elapsed += Time.deltaTime;
+
+            float t = elapsed / decelerationDuration;
+            t = Mathf.SmoothStep(0f, 1f, t);
+
+            currentSpeed = Mathf.Lerp(
+                startingSpeed,
+                0f,
+                t
+            );
+
+            yield return null;
+        }
+
+        // Completely stopped
+        currentSpeed = 0f;
+        isRotating = false;
+
+        // Reverse direction for the next transition
+        RotatingLeft = !RotatingLeft;
     }
 }

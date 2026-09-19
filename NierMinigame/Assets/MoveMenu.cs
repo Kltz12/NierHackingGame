@@ -13,6 +13,8 @@ public class MoveMenu : MonoBehaviour
     private Vector2 startPosition;
     private Vector2 levelSelectPosition;
 
+    public AudioSource GearAudio;
+
     private void Start()
     {
         startPosition = menuContainer.anchoredPosition;
@@ -38,6 +40,7 @@ public class MoveMenu : MonoBehaviour
         }
 
         Vector2 currentPosition = menuContainer.anchoredPosition;
+        GearAudio.Play();
 
         float elapsed = 0f;
 
@@ -56,6 +59,7 @@ public class MoveMenu : MonoBehaviour
 
             yield return null;
         }
+
 
         menuContainer.anchoredPosition = targetPosition;
 

@@ -4,8 +4,8 @@ public class TurretShooting : MonoBehaviour
 {
     public GameObject bulletPrefab;
 
-    public Transform firePoint;              // spawn position
-    public Transform[] directionTargets;     // direction markers
+    public Transform firePoint;            
+    public Transform[] directionTargets;     // aim direction aka, child objects
 
     public float bulletSpeed = 20f;
     public float fireRate = 1f;
@@ -33,7 +33,6 @@ public class TurretShooting : MonoBehaviour
     {
         Vector3 direction = (target.position - firePoint.position).normalized;
 
-        // Optional: rotate bullet visually toward direction
         Quaternion rotation = Quaternion.LookRotation(direction);
 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, rotation);

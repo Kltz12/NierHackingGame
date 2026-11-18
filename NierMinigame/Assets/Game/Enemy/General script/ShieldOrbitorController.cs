@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShieldOrbitController : MonoBehaviour
+public class ShieldOrbitController : MonoBehaviour //shields that orbit around enemies
 {
     public Transform center;
     public Transform shield1;
@@ -16,7 +16,7 @@ public class ShieldOrbitController : MonoBehaviour
 
     void Start()
     {
-        // Store original rotations
+        // store original rotations
         shield1InitialRot = shield1.rotation;
         shield2InitialRot = shield2.rotation;
     }
@@ -37,10 +37,10 @@ public class ShieldOrbitController : MonoBehaviour
 
         shield.position = center.position + offset;
 
-        // Base rotation: face outward
+        // base rotation 
         Quaternion lookRot = Quaternion.LookRotation(offset);
 
-        // Combine with original rotation
+        // original rotation
         shield.rotation = lookRot * initialRot;
     }
 }
